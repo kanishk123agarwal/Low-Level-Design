@@ -91,13 +91,17 @@ public:
 };
 
 int main() {
-    string type = "basic";
+    string type = "premium";
 
     BurgerFactory* myFactory = new SinghBurger();
 
     Burger* burger = myFactory->createBurger(type);
 
     burger->prepare();
+
+    BurgerFactory* myFactory2=new KingBurger();
+    Burger* burger1=myFactory2->createBurger(type);
+    burger1->prepare();
 
     return 0;
 }
